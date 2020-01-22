@@ -13,6 +13,10 @@
   $ npm i @testim/testim-cli
   $ npx testim run test.js
 
-* To avoid memory heap err:
+* Troubleshooting:
 
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+
+  Resolution:
+  
   $ NODE_OPTIONS=--max-old-space-size=8192 npx testim run test.js
