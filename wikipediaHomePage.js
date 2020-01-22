@@ -30,10 +30,6 @@ module.exports.searchTextInWikipedia = searchTextInWikipedia;
 module.exports.setEnglishLanguage = setEnglishLanguage;
 
 
-
-
-
-
 /*
 async function setEnglishLanguage() {
     await selectOption(englishLanguageSelector);
