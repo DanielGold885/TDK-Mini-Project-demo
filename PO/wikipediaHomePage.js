@@ -49,12 +49,3 @@ async function readWikipediaInEnglishLanguage(readWikipediaLanguage) {
 module.exports.searchTextInWikipedia = searchTextInWikipedia;
 module.exports.setEnglishLanguage = setEnglishLanguage;
 module.exports.readWikipediaInEnglishLanguage = readWikipediaInEnglishLanguage;
-
-
-/*
-async function setEnglishLanguage() {
-    await selectOption(englishLanguageSelector);
-    //await click(englishLanguageSelector);
-    await waitForText(language , /en/);
-}
-*/
