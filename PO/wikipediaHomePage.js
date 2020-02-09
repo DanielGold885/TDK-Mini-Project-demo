@@ -49,3 +49,4 @@ async function readWikipediaInEnglishLanguage(readWikipediaLanguage) {
 module.exports.searchTextInWikipedia = searchTextInWikipedia;
 module.exports.setEnglishLanguage = setEnglishLanguage;
 module.exports.readWikipediaInEnglishLanguage = readWikipediaInEnglishLanguage;
+
