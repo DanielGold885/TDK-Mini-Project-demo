@@ -26,12 +26,10 @@ async function openDetailsPage() {
     await click(FURTHER_DETAILS_BUTTON);
 }
 
-
 async function goToBusinessDepartmentForm() {
     await click(BUSINESS_DEPARTMENT);
     await businessForm.validatePageHeader();
 }
-
 
 async function validateMandatoryFieldsOnBusinessForm() {
     await waitForElement(COMPANY_NAME_MANDATORY_ERROR);
