@@ -4,5 +4,7 @@
     "Language": "English",
     "readWikipediaLanguage": "English",
     "zer4youURL": "https://www.zer4u.co.il/",
-    "numberOfProductsOnPage": 3
+    "numberOfProductsOnPage": 3,
+    "myStoreURL": "http://automationpractice.com/index.php",
+    "clothesItem": "Blouse"
 }

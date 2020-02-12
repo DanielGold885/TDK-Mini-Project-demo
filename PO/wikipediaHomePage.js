@@ -2,23 +2,24 @@
 'use strict';
 
 const { url, click, selectOption, type, waitForText } = require('testim');
-const {expect} = require('chai');
+const { expect } = require('chai');
+const searchResultPage = require('./wikipediaSearchResultPage')
+
 
 const SEARCH_TEXT_FIELD = "#searchInput";
 const SEARCH_ICON = "#search-form > fieldset > button > i";
 const ENGLISH_LANGUAGE_SELECTOR = "#searchLanguage > option[value='en']";
-const SEARCH_RESULT_PAGE_HEADLINE = "#firstHeading";
 const LANGUAGE = "#jsLangLabel";
 const READ_WIKIPEDIA_IN_YOUR_LANGUAGE_SELECTOR = "#js-lang-list-button > i.sprite.svg-arrow-down-blue";
 const ENGLISH_LINK = "a[lang='en']";
 
 
-async function searchTextInWikipedia(searchVlue) {
+async function searchTextInWikipedia(searchValue) {
     //search value in wikipedia from the homepage
 
-    await type(SEARCH_TEXT_FIELD, searchVlue);
+    await type(SEARCH_TEXT_FIELD, searchValue);
     await click(SEARCH_ICON);
-    await waitForText(SEARCH_RESULT_PAGE_HEADLINE, searchVlue);
+    await searchResultPage.validateHeadline('headline text');
 }
 
 async function setEnglishLanguage(LanguageSelectBoxValue) {
@@ -26,6 +27,7 @@ async function setEnglishLanguage(LanguageSelectBoxValue) {
 
     switch (LanguageSelectBoxValue) {
         case 'English':
+            //can add more options later
             await selectOption(ENGLISH_LANGUAGE_SELECTOR);
             await waitForText(LANGUAGE, /en/);
             break;
@@ -46,7 +48,9 @@ async function readWikipediaInEnglishLanguage(readWikipediaLanguage) {
     }
 }
 
-module.exports.searchTextInWikipedia = searchTextInWikipedia;
-module.exports.setEnglishLanguage = setEnglishLanguage;
-module.exports.readWikipediaInEnglishLanguage = readWikipediaInEnglishLanguage;
 
+module.exports = {
+    searchTextInWikipedia,
+    setEnglishLanguage,
+    readWikipediaInEnglishLanguage
+}
